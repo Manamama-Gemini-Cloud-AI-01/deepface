@@ -159,22 +159,7 @@ def analyze_and_tag_image(image_path):
                 print(f"  Error during detailed DeepFace analysis for {image_path}: {e}")
         except Exception as e:
             print(f"  General error during detailed DeepFace analysis for {image_path}: {e}")
-    else:
-        print(f"  No faces detected in {image_path}. Skipping detailed analysis.")
 
-
-
-
-class NumpyEncoder(json.JSONEncoder):
-    """ Custom encoder for numpy data types """
-    def default(self, obj):
-        if isinstance(obj, np.integer):
-            return int(obj)
-        elif isinstance(obj, np.floating):
-            return float(obj)
-        elif isinstance(obj, np.ndarray):
-            return obj.tolist()
-        return super(NumpyEncoder, self).default(obj)
 
 def run_shell_command(command, description="Running shell command", cwd=None):
     """
@@ -195,13 +180,6 @@ def run_shell_command(command, description="Running shell command", cwd=None):
         print(f"Error: Command not found. Make sure '{command.split()[0]}' is in your PATH.")
         raise
 
-def run_exiftool_command(command_args):
-    """
-    Runs an exiftool command and returns its output.
-    """
-
-    result = subprocess.run(command_args, capture_output=True, text=True, check=True)
-    return result.stdout.strip()
 
 def get_exif_usercomment(image_path):
     """
