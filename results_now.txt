@@ -1,0 +1,210 @@
+zezen@above-hp2-silver:~/Downloads/GitHub/deepface$ python /home/zezen/Downloads/GitHub/deepface/deepface_detailed_analyzer.py  /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original.mp4
+2025-11-30 22:06:44.708490: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-11-30 22:06:45.149127: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+--- Step 1: Extracting images from video using detect_images_in_video.sh ---
+
+--- Running detect_images_in_video.sh ---
+Command: /home/zezen/Downloads/GitHub/Ubuntu_Scripts_1/ai_ml/detect_images_in_video.sh '/home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original.mp4' --num-images 3 --scene-threshold 27
+STDOUT:
+ Create a storyboard out of video, version 1.5.6
+⇛ ⌚ Source video duration: 1 min 6 s
+
+Running PySceneDetect on '/home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original.mp4' with threshold: 27 and images per detected scene: 3 ...
+[PySceneDetect] PySceneDetect 0.6.7.1
+[PySceneDetect] WARNING: export-html is deprecated, use save-html instead.
+[PySceneDetect] Detecting scenes...
+[PySceneDetect] Processed 1657 frames in 4.1 seconds (average 407.03 FPS).
+[PySceneDetect] Detected 23 scenes, average shot length 2.9 seconds.
+[PySceneDetect] Writing scene list to CSV file:
+  /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scenes.csv
+[PySceneDetect] Scene List:
+-----------------------------------------------------------------------
+ | Scene # | Start Frame |  Start Time  |  End Frame  |   End Time   |
+-----------------------------------------------------------------------
+ |      1  |           1 | 00:00:00.000 |          75 | 00:00:03.001 |
+ |      2  |          76 | 00:00:03.001 |         196 | 00:00:07.843 |
+ |      3  |         197 | 00:00:07.843 |         232 | 00:00:09.284 |
+ |      4  |         233 | 00:00:09.284 |         356 | 00:00:14.245 |
+ |      5  |         357 | 00:00:14.245 |         403 | 00:00:16.126 |
+ |      6  |         404 | 00:00:16.126 |         573 | 00:00:22.929 |
+ |      7  |         574 | 00:00:22.929 |         644 | 00:00:25.770 |
+ |      8  |         645 | 00:00:25.770 |         684 | 00:00:27.370 |
+ |      9  |         685 | 00:00:27.370 |         732 | 00:00:29.291 |
+ |     10  |         733 | 00:00:29.291 |         776 | 00:00:31.052 |
+ |     11  |         777 | 00:00:31.052 |         798 | 00:00:31.932 |
+ |     12  |         799 | 00:00:31.932 |         815 | 00:00:32.612 |
+ |     13  |         816 | 00:00:32.612 |         834 | 00:00:33.373 |
+ |     14  |         835 | 00:00:33.373 |         850 | 00:00:34.013 |
+ |     15  |         851 | 00:00:34.013 |         884 | 00:00:35.373 |
+ |     16  |         885 | 00:00:35.373 |         924 | 00:00:36.974 |
+ |     17  |         925 | 00:00:36.974 |         967 | 00:00:38.695 |
+ |     18  |         968 | 00:00:38.695 |        1051 | 00:00:42.056 |
+ |     19  |        1052 | 00:00:42.056 |        1113 | 00:00:44.537 |
+ |     20  |        1114 | 00:00:44.537 |        1161 | 00:00:46.458 |
+ |     21  |        1162 | 00:00:46.458 |        1270 | 00:00:50.819 |
+ |     22  |        1271 | 00:00:50.819 |        1397 | 00:00:55.901 |
+ |     23  |        1398 | 00:00:55.901 |        1657 | 00:01:06.305 |
+-----------------------------------------------------------------------
+[PySceneDetect] Comma-separated timecode list:
+  00:00:03.001,00:00:07.843,00:00:09.284,00:00:14.245,00:00:16.126,00:00:22.929,00:00:25.770,00:00:27.370,00:00:29.291,00:00:31.052,00:00:31.932,00:00:32.612,00:00:33.373,00:00:34.013,00:00:35.373,00:00:36.974,00:00:38.695,00:00:42.056,00:00:44.537,00:00:46.458,00:00:50.819,00:00:55.901
+[PySceneDetect] Saving 3 images per scene [format=jpg] /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27 
+[PySceneDetect] Exporting scenes to html:
+ /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scenes.html:
+
+
+Generating minimal summary HTML file...
+✅ Done.
+Images and CSV and a three image per scene storyboard HTML file have been saved to: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27
+📸 Number of images used in the storyboard video and summary HTML file: 69
+Additional shorter single image per scene summary HTML has been saved to: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original_storyboard-single_scene.html
+🎬 Storyboard video has been saved to: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original_storyboard_all_scenes.mp4
+⇛ ⌚ Source video duration: 1 min 6 s
+⊐ ⌚ Target sped-up storyboard video duration: 13 s 800 ms
+Processing time: 14 s
+
+Step 1 completed in 14.64 seconds.
+
+--- Step 2: Performing initial DeepFace detection and EXIF tagging in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27 ---
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-020-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-010-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-007-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-021-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-001-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-004-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-018-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-019-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-006-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-017-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-015-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-002-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-005-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-022-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-011-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-016-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-009-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-003-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-023-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-012-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-008-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-014-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+  Performing initial DeepFace detection for: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-013-02.jpg
+  Initial DeepFace detection results: Detected=Yes, Count=1
+Step 2 completed for 23 images in 12.90 seconds.
+
+--- Step 3: Performing detailed DeepFace analysis using deepface_detailed_analyzer.py on /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27 ---
+Starting detailed DeepFace analysis in: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-020-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-020-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-020-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-010-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-010-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-010-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-007-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-007-02.jpg. Running detailed analysis...
+Action: age:   0%|                                               | 0/4 [00:00<?, ?it/s]2025-11-30 22:07:18.801853: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+2025-11-30 22:07:19.080324: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 411041792 exceeds 10% of free system memory.
+2025-11-30 22:07:19.285630: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 411041792 exceeds 10% of free system memory.
+2025-11-30 22:07:19.385817: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 411041792 exceeds 10% of free system memory.
+2025-11-30 22:07:19.600480: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 67108864 exceeds 10% of free system memory.
+2025-11-30 22:07:19.628707: W external/local_xla/xla/tsl/framework/cpu_allocator_impl.cc:84] Allocation of 67108864 exceeds 10% of free system memory.
+Action: emotion: 100%|███████████████████████████████████| 4/4 [00:09<00:00,  2.26s/it]
+  Detailed analysis results for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-007-02.jpg: {'DeepFaceFaceDetected': 'Yes', 'DeepFaceFaceCount': 1, 'DeepFaceDominantEmotion': 'neutral', 'DeepFaceAge': 26, 'DeepFaceDominantGender': 'Man', 'DeepFaceDominantRace': 'white', 'DeepFaceAnalysisSummary': [{'age': 26, 'region': {'x': 233, 'y': 209, 'w': 85, 'h': 85, 'left_eye': None, 'right_eye': None}, 'face_confidence': 0.97, 'gender': {'Woman': np.float32(15.412326), 'Man': np.float32(84.58768)}, 'dominant_gender': 'Man', 'race': {'asian': np.float32(35.422993), 'indian': np.float32(0.52928615), 'black': np.float32(0.22407873), 'white': np.float32(56.336098), 'middle eastern': np.float32(3.3126402), 'latino hispanic': np.float32(4.1749043)}, 'dominant_race': 'white', 'emotion': {'angry': np.float32(3.6311958), 'disgust': np.float32(0.00042365736), 'fear': np.float32(27.332077), 'happy': np.float32(0.002807203), 'sad': np.float32(26.73466), 'surprise': np.float32(0.014970214), 'neutral': np.float32(42.283867)}, 'dominant_emotion': 'neutral'}]}
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-021-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-021-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-021-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-001-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-001-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-001-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-004-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-004-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-004-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-018-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-018-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-018-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-019-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-019-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-019-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-006-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-006-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-006-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-017-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-017-02.jpg. Running detailed analysis...
+Action: emotion: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  4.57it/s]
+Action: emotion: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  4.17it/s]
+  Detailed analysis results for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-017-02.jpg: {'DeepFaceFaceDetected': 'Yes', 'DeepFaceFaceCount': 2, 'DeepFaceDominantEmotion': 'fear', 'DeepFaceAge': 26, 'DeepFaceDominantGender': 'Woman', 'DeepFaceDominantRace': 'black', 'DeepFaceAnalysisSummary': [{'age': 26, 'region': {'x': 61, 'y': 105, 'w': 339, 'h': 339, 'left_eye': None, 'right_eye': None}, 'face_confidence': 0.97, 'gender': {'Woman': np.float32(60.186768), 'Man': np.float32(39.813225)}, 'dominant_gender': 'Woman', 'race': {'asian': np.float32(3.1778007), 'indian': np.float32(12.325237), 'black': np.float32(54.78508), 'white': np.float32(6.2567024), 'middle eastern': np.float32(5.486424), 'latino hispanic': np.float32(17.968754)}, 'dominant_race': 'black', 'emotion': {'angry': np.float32(6.0549626), 'disgust': np.float32(0.34121066), 'fear': np.float32(66.83761), 'happy': np.float32(3.2177005), 'sad': np.float32(2.0305116), 'surprise': np.float32(0.0010709008), 'neutral': np.float32(21.516932)}, 'dominant_emotion': 'fear'}, {'age': 35, 'region': {'x': 211, 'y': 218, 'w': 63, 'h': 63, 'left_eye': None, 'right_eye': None}, 'face_confidence': 0.96, 'gender': {'Woman': np.float32(35.34142), 'Man': np.float32(64.65858)}, 'dominant_gender': 'Man', 'race': {'asian': np.float32(40.176147), 'indian': np.float32(4.759288), 'black': np.float32(2.4765522), 'white': np.float32(28.209078), 'middle eastern': np.float32(10.321932), 'latino hispanic': np.float32(14.057004)}, 'dominant_race': 'asian', 'emotion': {'angry': np.float32(0.17794068), 'disgust': np.float32(9.640058e-05), 'fear': np.float32(83.95302), 'happy': np.float32(0.033300444), 'sad': np.float32(15.304832), 'surprise': np.float32(0.0091576185), 'neutral': np.float32(0.5216555)}, 'dominant_emotion': 'fear'}]}
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-015-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-015-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-015-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-002-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-002-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-002-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-005-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-005-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-005-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-022-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-022-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-022-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-011-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-011-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-011-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-016-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-016-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-016-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-009-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-009-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-009-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-003-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-003-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-003-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-023-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-023-02.jpg. Running detailed analysis...
+Action: emotion: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00<00:00,  4.48it/s]
+  Detailed analysis results for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-023-02.jpg: {'DeepFaceFaceDetected': 'Yes', 'DeepFaceFaceCount': 1, 'DeepFaceDominantEmotion': 'fear', 'DeepFaceAge': 26, 'DeepFaceDominantGender': 'Woman', 'DeepFaceDominantRace': 'latino hispanic', 'DeepFaceAnalysisSummary': [{'age': 26, 'region': {'x': 444, 'y': 159, 'w': 171, 'h': 171, 'left_eye': None, 'right_eye': None}, 'face_confidence': 0.97, 'gender': {'Woman': np.float32(84.846504), 'Man': np.float32(15.153498)}, 'dominant_gender': 'Woman', 'race': {'asian': np.float32(20.677006), 'indian': np.float32(5.6727), 'black': np.float32(7.5315585), 'white': np.float32(23.0374), 'middle eastern': np.float32(8.837522), 'latino hispanic': np.float32(34.24382)}, 'dominant_race': 'latino hispanic', 'emotion': {'angry': np.float32(0.89454186), 'disgust': np.float32(3.8344607), 'fear': np.float32(94.15862), 'happy': np.float32(0.075059235), 'sad': np.float32(0.47716945), 'surprise': np.float32(0.00572748), 'neutral': np.float32(0.5544117)}, 'dominant_emotion': 'fear'}]}
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-012-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-012-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-012-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-008-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-008-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-008-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-014-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-014-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-014-02.jpg: Face could not be detected. Updating status.
+Processing image: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-013-02.jpg
+  Faces detected in /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-013-02.jpg. Running detailed analysis...
+  Detailed analysis failed for /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original-Scene-013-02.jpg: Face could not be detected. Updating status.
+Detailed DeepFace analysis completed for directory: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27
+Step 3 completed in 30.28 seconds.
+
+--- Workflow completed successfully! ---
+
+--- Step 4: Generating DeepFace HTML summary report ---
+  HTML summary generated at: /home/zezen/Downloads/GitHub/deepface/source/1_Bugs_Life_original_scenes_n3_t27/1_Bugs_Life_original_deepface_summary.html
+Step 4 completed in 2.60 seconds.
+
+--- Full workflow completed! ---
+zezen@above-hp2-silver:~/Downloads/GitHub/deepface$
+
