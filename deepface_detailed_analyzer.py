@@ -174,7 +174,7 @@ def analyze_and_tag_image(image_path):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Orchestrates video processing, initial DeepFace detection, and detailed DeepFace analysis."
+        description="Orchestrates video processing, initial DeepFace detection, and detailed DeepFace analysis. Version 2.0 | Author: ManamaMa"
     )
     parser.add_argument("input_video", type=str, help="Path to the input video file.")
     parser.add_argument("--num-images", type=int, default=3,
