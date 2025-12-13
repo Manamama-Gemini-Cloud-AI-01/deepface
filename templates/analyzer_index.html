@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepFace Full Analyzer</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 40px; background-color: #f0f2f5; color: #333; }
+        h1 { text-align: center; color: #1c1e21; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .control-panel { display: flex; justify-content: space-around; align-items: flex-start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #ddd; }
+        .webcam-section, .upload-section { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        video { border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #1877f2; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background-color 0.3s; }
+        button:hover { background-color: #166fe5; }
+        #results { margin-top: 20px; }
+        .face-result { border: 1px solid #ccc; padding: 15px; margin-top: 15px; border-radius: 8px; }
+        .face-title { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DeepFace Full Analyzer</h1>
+        <div class="control-panel">
+            <div class="webcam-section">
+                <h3>Analyze from Webcam</h3>
+                <video id="video" width="400" height="300" autoplay></video>
+                <button id="analyzeWebcam">Use Webcam & Analyze</button>
+            </div>
+            <div class="upload-section">
+                <h3>Analyze from File</h3>
+                <input type="file" id="fileInput" accept="image/*">
+                <button id="analyzeFile">Analyze Uploaded File</button>
+            </div>
+        </div>
+        <div id="results"></div>
+    </div>
+    <canvas id="canvas" style="display:none;"></canvas>
+
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const resultsDiv = document.getElementById('results');
+
+        // --- Webcam Logic ---
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+                alert("Could not access webcam. Please ensure it is enabled and permissions are granted.");
+            });
+
+        document.getElementById('analyzeWebcam').addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+            const dataUrl = canvas.toDataURL('image/jpeg');
+            analyzeImage(dataUrl, 'webcam');
+        });
+
+        // --- File Upload Logic ---
+        document.getElementById('analyzeFile').addEventListener('click', () => {
+            const fileInput = document.getElementById('fileInput');
+            if (fileInput.files.length === 0) {
+                alert("Please select an image file first.");
+                return;
+            }
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
+            analyzeImage(formData, 'upload');
+        });
+        
+        function analyzeImage(body, type) {
+            resultsDiv.innerHTML = '<h2>Analyzing...</h2>';
+            
+            const endpoint = type === 'upload' ? '/full_analyze_upload' : '/full_analyze_webcam';
+            const fetchOptions = { method: 'POST', body: body };
+            
+            // For webcam, we need to set the content type for base64 string
+            if (type === 'webcam') {
+                fetchOptions.headers = { 'Content-Type': 'application/json' };
+                fetchOptions.body = JSON.stringify({ image: body });
+            }
+
+            fetch(endpoint, fetchOptions)
+                .then(response => response.json())
+                .then(data => {
+                    resultsDiv.innerHTML = ''; // Clear "Analyzing..."
+                    if (data.error) {
+                        resultsDiv.innerHTML = `<h2>Error</h2><p>${data.error}</p>`;
+                        return;
+                    }
+
+                    data.forEach((face, index) => {
+                        const faceDiv = document.createElement('div');
+                        faceDiv.className = 'face-result';
+                        faceDiv.innerHTML = `<div class="face-title">Face ${index + 1} (Confidence: ${face.face_confidence * 100}%)</div>
+                                             <p><strong>Dominant Emotion:</strong> ${face.dominant_emotion}</p>
+                                             <p><strong>Age:</strong> ${face.age}</p>
+                                             <p><strong>Dominant Gender:</strong> ${face.dominant_gender}</p>
+                                             <p><strong>Dominant Race:</strong> ${face.dominant_race}</p>`;
+                        
+                        const emotionDiv = document.createElement('div');
+                        const genderDiv = document.createElement('div');
+                        const raceDiv = document.createElement('div');
+                        
+                        emotionDiv.id = `emotion-chart-${index}`;
+                        genderDiv.id = `gender-chart-${index}`;
+                        raceDiv.id = `race-chart-${index}`;
+
+                        faceDiv.appendChild(emotionDiv);
+                        faceDiv.appendChild(genderDiv);
+                        faceDiv.appendChild(raceDiv);
+                        resultsDiv.appendChild(faceDiv);
+
+                        // Create plots
+                        Plotly.newPlot(emotionDiv, [{
+                            x: Object.keys(face.emotion),
+                            y: Object.values(face.emotion),
+                            type: 'bar'
+                        }], { title: 'Emotion Probabilities' });
+
+                        Plotly.newPlot(genderDiv, [{
+                            x: Object.keys(face.gender),
+                            y: Object.values(face.gender),
+                            type: 'bar'
+                        }], { title: 'Gender Probabilities' });
+                        
+                        Plotly.newPlot(raceDiv, [{
+                            x: Object.keys(face.race),
+                            y: Object.values(face.race),
+                            type: 'bar'
+                        }], { title: 'Race Probabilities' });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultsDiv.innerHTML = `<h2>An error occurred</h2><p>${error.toString()}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
