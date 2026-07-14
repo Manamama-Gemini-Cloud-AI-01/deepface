@@ -361,6 +361,29 @@ class TestVerifyEndpoint(unittest.TestCase):
             assert isinstance(result, dict)
             logger.info("✅ represent api for multipart form data test is done")
 
+    def test_numpy_serialization_regression(self):
+        """Regression test for NumpyJSONProvider."""
+        import numpy as np
+
+        # Create a temporary route on the app to test serialization
+        @self.app.application.route('/test-numpy-serialization')
+        def test_numpy():
+            return {
+                "scalar": np.float32(1.0),
+                "array": np.array([1.0, 2.0], dtype=np.float32)
+            }
+
+        response = self.app.get('/test-numpy-serialization')
+        assert response.status_code == 200
+        result = response.json
+
+        # Assert serialization to standard JSON types
+        assert isinstance(result['scalar'], float)
+        assert isinstance(result['array'], list)
+        assert result['scalar'] == 1.0
+        assert result['array'] == [1.0, 2.0]
+        logger.info("✅ numpy serialization regression test is done")
+
     def test_represent_for_multipart_form_data_and_filepath(self):
         if is_form_data_file_testable() is False:
             return

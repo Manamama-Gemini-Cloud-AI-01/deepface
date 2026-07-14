@@ -1,18 +1,12 @@
 # built-in dependencies
-<<<<<<< HEAD
-from typing import Union
+from typing import Union, cast, Any, Tuple, Dict
 import logging
 
 # 3rd party dependencies
 from flask import Blueprint, request, jsonify, current_app
-import numpy as np
-=======
-from typing import Union, cast, Any, Tuple, Dict
-
-# 3rd party dependencies
-from flask import Blueprint, request
 from numpy.typing import NDArray
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
+import numpy as np
+
 
 # project dependencies
 from deepface import __version__
@@ -137,12 +131,8 @@ def verify() -> Tuple[Dict[str, Any], int]:
 
 
 @blueprint.route("/analyze", methods=["POST"])
-<<<<<<< HEAD
-def analyze():
-    current_app.logger.info("'/analyze' endpoint called from GUI.")
-=======
 def analyze() -> Tuple[Dict[str, Any], int]:
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
+    current_app.logger.info("'/analyze' endpoint called from GUI.")
     input_args = (request.is_json and request.get_json()) or (
         request.form and request.form.to_dict()
     )
@@ -170,12 +160,8 @@ def analyze() -> Tuple[Dict[str, Any], int]:
             .split(",")
         )
 
-<<<<<<< HEAD
     current_app.logger.info("Passing image to the analysis service (DeepFace.analyze).")
-    demographies = service.analyze(
-=======
     demographies, status_code = service.analyze(
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
         img_path=img,
         actions=actions,
         detector_backend=input_args.get("detector_backend", "opencv"),
@@ -186,11 +172,7 @@ def analyze() -> Tuple[Dict[str, Any], int]:
     current_app.logger.info("Analysis service returned a result.")
     current_app.logger.info(f"Result to be sent to GUI: {repr(demographies)}")
 
-<<<<<<< HEAD
-    current_app.logger.info("Attempting to serialize result to JSON...")
-    return jsonify(demographies)
-=======
-    logger.debug(demographies)
+    current_app.logger.debug(demographies)
 
     return demographies, status_code
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
+

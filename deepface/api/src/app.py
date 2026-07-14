@@ -12,7 +12,6 @@ from deepface.commons.logger import Logger
 logger = Logger()
 
 
-<<<<<<< HEAD
 # This is the custom JSON provider that will fix the serialization error
 class NumpyJSONProvider(DefaultJSONProvider):
     def default(self, o):
@@ -26,10 +25,7 @@ class NumpyJSONProvider(DefaultJSONProvider):
         return super(NumpyJSONProvider, self).default(o)
 
 
-def create_app():
-=======
 def create_app() -> Flask:
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
     app = Flask(__name__)
     
     # Set our custom JSON provider to handle numpy types
@@ -37,10 +33,6 @@ def create_app() -> Flask:
     
     CORS(app)
     app.register_blueprint(blueprint)
-<<<<<<< HEAD
-    logger.info(f"Welcome to DeepFace API v{DeepFace.__version__}!")
-    return app
-=======
     logger.info(f"Welcome to DeepFace API v{__version__}!")
     return app
->>>>>>> e12af40b820e882546fd0834fb98b8874b9b366e
+
